@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1> Spring </h1>
+<p th:text="'Hello, ' + ${name} + '! Buzsi level: ' + ${scale} " />
+<h2>Biztos nem fog mukodni</h2>
+<form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input type = "text" th:field="*{Id}"/></td>
+        </tr>
+        <tr>
+            <td>Message:</td>
+            <td><input type = "text" th:field="*{Content}" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type = "submit" value = "Submit"/></td>
+            <td><input type="reset" value="Reset" /></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
