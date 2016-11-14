@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>TemalabInsta</title>
+</head>
+<body>
+<form action="#" th:action="@{/upload}" method="get">
+    <div>
+        <input type="submit" value="Upload"/>
+    </div>
+</form>
+<br/>
+<form action="#" th:action="@{/myimages}" method="get">
+    <div>
+        <input type="submit" value="My Images"/>
+    </div>
+</form>
+<br/>
+<form action="#" th:action="@{/userimages}" method="get">
+    <div>
+        <label name="namelabel" for="name">Search for user: </label>
+        <input id="name" type="text"  name="username"/>
+        <input type="submit" value="Find"/>
+    </div>
+</form>
+<br/>
+<form action="#" th:action="@{/tagresultimages}" method="get">
+    <div>
+        <label name="taglabel" for="tag">Search for title: </label>
+        <input id="tag" type="text"  name="imagetag"/>
+        <input type="submit" value="Find"/>
+    </div>
+</form>
+<table>
+    <tr th:each="image : ${images}">
+        <td th:utext="${image.url}"></td>
+        <td th:text="${image.photo.user.name}"> </td>
+        <td th:text="${image.photo.title}"> </td>
+    </tr>
+</table>
+</body>
+</html>

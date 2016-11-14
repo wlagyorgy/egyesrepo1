@@ -1,0 +1,43 @@
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile group: 'com.cloudinary', name: 'cloudinary-http44', version: '1.4.5'
+    testCompile("junit:junit")
+    compile 'com.google.apis:google-api-services-oauth2:v1-rev124-1.22.0'
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+
+}
