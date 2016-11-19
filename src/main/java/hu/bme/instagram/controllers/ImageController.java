@@ -5,6 +5,7 @@ import com.cloudinary.Cloudinary;
 import com.cloudinary.Transformation;
 import com.cloudinary.utils.ObjectUtils;
 import hu.bme.instagram.dal.PhotoRepository;
+import hu.bme.instagram.entity.Like;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -111,6 +112,7 @@ public class ImageController {
         photo.setUser(user);
         photo.setCreated_at(new Date());
         photo.setTitle(uploadedPhotoName);
+        photo.setLike(new Like());
         return photo;
     }
 
