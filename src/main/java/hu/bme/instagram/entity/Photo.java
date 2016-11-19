@@ -6,10 +6,6 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-@NamedQuery(
-        name="Photo.searchForTitle",
-        query = "select p from Photo p where p.title like :tag"
-)
 public class Photo {
 
     @Id
@@ -22,6 +18,20 @@ public class Photo {
     @JoinColumn(name = "user")
     @NotNull
     private User user;
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "likeCount", column=@Column(name = "likecount")),
+//            @AttributeOverride(name = "likes", column = @Column(name = "liker"))
+//    })
+//    private Like like;
+//
+//    public Like getLike() {
+//        return like;
+//    }
+//
+//    public void setLike(Like like) {
+//        this.like = like;
+//    }
 
     public String getTitle() {
         return title;
