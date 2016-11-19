@@ -33,4 +33,9 @@ public class Like {
     public void setLikes(List<String> likes) {
         this.likes = likes;
     }
+
+    public void addOne()
+    {
+        likeCount+= 1;
+    }
 }
